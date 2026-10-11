@@ -40,7 +40,7 @@ export class WorldScene extends Phaser.Scene {
     loadPeople(this)
     for(const name of ['world-ground','tree','bush','flower','lab','home','francisco','pokeball','bubbles','leaf-pedestal-v2','bolt-pedestal-v2','star-pedestal-v2','sign','generator','note0-v3','note1-v3','note2-v3','forest-gate','bridge-gate','rival-gate']) this.load.image(`env-${name}`, `/assets/environment/${name}.png`)
     for (const sound of ['click_001','confirmation_001','error_001','open_001','close_001']) this.load.audio(sound, `/assets/${sound}.ogg`)
-    this.load.audio('theme', '/assets/theme.wav')
+    this.load.audio('theme', '/assets/theme-v2.m4a')
   }
   create() {
     this.progress = load()
@@ -87,7 +87,7 @@ export class WorldScene extends Phaser.Scene {
     if (!this.progress.chapter) this.say('BOAS-VINDAS', lines.intro)
   }
   sfx(name = 'click_001') { try { this.sound.play(name, { volume: 0.35 }) } catch { /* audio may be disabled */ } }
-  startMusic() { if(!musicStarted) { try { this.sound.play('theme', {volume:.12,loop:true});musicStarted=true } catch { /* autoplay blocked */ } } }
+  startMusic() { if(!musicStarted) { try { this.sound.play('theme', {volume:.10,loop:true});musicStarted=true } catch { /* autoplay blocked */ } } }
   key(x: number, y: number) { return `${x},${y}` }
   block(x: number, y: number) { this.blocked.add(this.key(x,y)) }
   label(x: number, y: number, text: string, color = '#fff4cd') { return this.add.text(x*T+8, y*T+2, text, { fontFamily: 'DM Sans', fontStyle: 'bold', fontSize: '9px', color, stroke: '#29453b', strokeThickness: 2 }).setOrigin(.5, 0).setDepth(11) }
