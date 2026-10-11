@@ -19,7 +19,7 @@ function Invitation({ close, replay }: { close: () => void; replay: () => void }
     <div className="details"><div><small>QUANDO</small><strong>Domingo, 8 de novembro de 2026</strong></div><div><small>HORA</small><strong>Às 15h00</strong></div><div><small>LOCAL</small><strong>{party.location}</strong></div></div>
     <p className="footer-copy">Prepara as tuas Pokébolas e vem celebrar esta aventura!</p>
     <div className="actions"><a className={whatsappUrl?'primary':'disabled'} href={whatsappUrl||undefined} target="_blank" rel="noopener noreferrer" aria-disabled={!whatsappUrl} onClick={e=>{if(!whatsappUrl)e.preventDefault()}}>Confirmar presença</a><a className={party.mapUrl?'secondary':'disabled'} href={party.mapUrl||undefined} target="_blank" rel="noopener noreferrer" aria-disabled={!party.mapUrl} onClick={e=>{if(!party.mapUrl)e.preventDefault()}}>Ver localização</a><button className="secondary" onClick={replay}>Jogar novamente</button></div>
-    {(!whatsappUrl||!party.mapUrl||party.location==='Local a anunciar')&&<small className="config-note">Localização e confirmação de presença disponíveis em breve.</small>}
+    {!whatsappUrl&&<small className="config-note">Confirmação de presença disponível em breve.</small>}
   </article></div>
 }
 

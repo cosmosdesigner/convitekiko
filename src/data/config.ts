@@ -1,7 +1,9 @@
-// Preencher estes valores antes de partilhar o convite. Não é preciso alterar outros ficheiros.
+// Alterar a morada aqui atualiza o convite e a pesquisa no mapa.
+const address = 'Rua Ribeiro da Silva, 1032, 1685-168 Famões'
+
 export const party = {
-  location: 'Rua Ribeiro da Silva, 1032, 1685-168 Famões',
-  mapUrl: '', // Ex.: https://maps.google.com/?q=...
+  location: address,
+  mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${address}, Portugal`)}`,
   whatsappNumber: '', // Número internacional sem + nem espaços. Ex.: 351912345678
 }
 

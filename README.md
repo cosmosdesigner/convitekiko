@@ -5,7 +5,7 @@ Convite interativo estático, em português europeu. O ecrã de boas-vindas perm
 ## Preparar e publicar
 
 1. `npm install`
-2. Editar **`src/data/config.ts`**: preencher `location`, `mapUrl` e `whatsappNumber` (formato internacional sem `+`). Enquanto não forem preenchidos, os respetivos botões aparecem indisponíveis para não enviar confirmações para um número errado.
+2. Editar **`src/data/config.ts`**: a morada em `address` aparece no convite e gera automaticamente o link «Ver localização» no Google Maps. Para ativar «Confirmar presença», preencher `whatsappNumber` (formato internacional sem `+`); sem número, esse botão fica indisponível.
 3. `npm run dev` para testar; `npm run build` para gerar `dist/`.
 4. Publicar `dist/` num alojamento estático (Vercel, Netlify, etc.).
 
